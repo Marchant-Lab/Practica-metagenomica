@@ -9,7 +9,7 @@ Debemos descargar antes los envs conda `entrez-direct`, `nextflow`, `sra-tools`
 ## Primer paso - descarga de datos del proyecto PRJNA681475
 El proyecto PRJNA681475 se encuentra alojado en el National Center for Biotechnology Information (NCBI) como un BioProject. Dentro del BioProject podemos encontrar información agrupada de metadatos, secuencias crudas depositadas en el Sequence Read Archive (SRA), datos ensamblados y anotados, publicaciones relacionadas. 
 
-De la página del BioProject, necesitaremos buscar y descargar información la base de datos SRA. Será necesaria para extraer la lista de identificadores SRR que utilizaremos para descargar luego las secuencias crudas. El archivo **search_SRR_to_list.txt** contiene el script de bash para realizar esta tarea. No olvidar cargar `conda activate entrez-direct`
+De la página del BioProject necesitaremos buscar y descargar información la base de datos SRA. Será necesaria para extraer la lista de identificadores SRR que utilizaremos para descargar luego las secuencias crudas. El archivo **search_SRR_to_list.txt** contiene el script de bash para realizar esta tarea. No olvidar cargar `conda activate entrez-direct`
 
 Al terminar la ejecución del script, tendremos un archivo **.txt** con la lista de identificadores.
 
@@ -35,7 +35,7 @@ Con el archivo de entrada generado, iniciamos la ejecución del flujo de trabajo
 run nf-core/mag --input samplesheet.csv --outdir resultados_nf-coremag -profile docker
 ```
 
-o también se puede crear un archivo `YAML` que contenga
+O también se puede crear un archivo `YAML` que contenga
 
 ```
 input: './samplesheet.csv'
