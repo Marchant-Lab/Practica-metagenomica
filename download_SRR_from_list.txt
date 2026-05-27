@@ -1,0 +1,19 @@
+
+#primero cargar en conda sra-tools
+
+mkdir -p lecturas_PRJNA681475
+
+for srr in $(cat srr_list.txt); do
+    echo "Procesando $srr..."
+    
+    # 1. Descargar el archivo .sra (más seguro para evitar interrupciones de red)
+    prefetch $srr
+    
+    # 2. Extraer a fastq (usa múltiples hilos, configurado a 8 como ejemplo)
+    fasterq-dump --split-3 --threads 8 --outdir lecturas_PRJNA681475 $srr
+    
+    # 3. Comprimir a fastq.gz (pigz usa múltiples hilos para una compresión rápida)
+    pigz -p 8 lecturas_PRJNA681475/${srr}*.fastq
+done
+
+echo "¡Procesamiento completado!"
