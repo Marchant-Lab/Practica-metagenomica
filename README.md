@@ -26,4 +26,25 @@ Luego de descargar los archivos SRR y tenerlos almacenados en una misma carpeta,
 | MA-1_illumina | 1 | ./lecturas_PRJNA681475/SRR13165308_1.fastq.gz   | ./lecturas_PRJNA681475/SRR13165308_2.fastq.gz   |  | ILLUMINA             |             |
 | MA-1_nanopore_run1 | 2 |    |    | ./lecturas_PRJNA681475/SRR18260858.fastq.gz |               |OXFORD_NANOPORE               |
 
-El archivo será nombrado 
+El archivo será nombrado **samplesheet.csv**, se encuentra delimitado por comas. 
+
+##Cuarto paso - iniciar flujo de trabajo de nf-core/mag en Nextflow
+Con el archivo de entrada generado, iniciamos la ejecución del flujo de trabajo con el siguiente código escrito en Bash. No olvidar  
+
+```
+run nf-core/mag --input samplesheet.csv --outdir resultados_nf-coremag -profile docker
+```
+
+o también se pude crear un archivo `YAML` que contenga
+
+```
+input: './samplesheet.csv'
+outdir: './resultados_nf-coremag/'
+<...>
+```
+y se utilizaría el siguiente código escrito en Bash:
+
+
+
+nextflow run nf-core/mag -profile docker -params-file params.yaml
+
