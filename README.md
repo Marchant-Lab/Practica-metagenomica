@@ -1,4 +1,4 @@
-# Practica Metagenómica
+# Práctica Metagenómica
 Repositorio creado con el objetivo de tener organizados los archivos y flujos de trabajo a usar para el análisis del metagenoma híbrido del suelo marítimo antártico PRJNA681475.
 
 Se utilizará el flujo de trabajo nf-core/mag para el ensamblaje, anotación y análisis de metagenomas. Este será ejecutado en el sistema de flujo de trabajos científicos Nextflow. 
