@@ -6,6 +6,8 @@ Se utilizará el flujo de trabajo nf-core/mag para el ensamblaje, anotación y a
 ## Antes de iniciar
 Debemos descargar antes los envs conda `entrez-direct`, `nextflow`, `sra-tools` 
 
+El flujo de trabajo será ejecutado en el shell de linux Bash.
+
 ## Primer paso - descarga de datos del proyecto PRJNA681475
 El proyecto PRJNA681475 se encuentra alojado en el National Center for Biotechnology Information (NCBI) como un BioProject. Dentro del BioProject podemos encontrar información agrupada de metadatos, secuencias crudas depositadas en el Sequence Read Archive (SRA), datos ensamblados y anotados, publicaciones relacionadas. 
 
@@ -14,12 +16,12 @@ De la página del BioProject necesitaremos buscar y descargar información la ba
 Al terminar la ejecución del script, tendremos un archivo **.txt** con la lista de identificadores.
 
 ## Segundo paso - descargar SRR de la lista
-Ya teniendo la lista de SRR creada, se podrán descargar cada una de ellas. Estos archivos SRR tienen la secuenciación de cada muestra de suelo tomada. El archivo **download_SRR_from_list.txt** contiene el script de bash para realizar esta tarea. No olvidar cargar `conda activate sra-tools`
+Ya teniendo la lista de SRR creada, se podrán descargar cada una de ellas. Estos archivos SRR tienen la secuenciación de cada muestra de suelo tomada. El archivo **download_SRR_from_list.txt** contiene el script de Bash para realizar esta tarea. No olvidar cargar `conda activate sra-tools`
 
 Al terminar la ejecución del script, tendremos una carpeta llamada **lecturas_PRJNA681475** en donde estarán descargados los archivos SRR. 
 
 ## Tercer paso - creación del archivo de entrada
-Luego de descargar los archivos SRR y tenerlos almacenados en una misma carpeta, crearemos el archivo de entrada que será utilizado por el flujo de trabajo de nf-core/mag. El archivo tendrá los nombres de las muestras, el grupo, lecturas cortas, lecturas largas y plataformas de secuenciación. El encabezado de la tabla, con ejemplos de lecturas largas y cortas, luce de la siguiente forma: 
+Luego de descargar los archivos SRR y tenerlos almacenados en una misma carpeta, crearemos el archivo de entrada, delimitados por comas, que será utilizado por el flujo de trabajo de nf-core/mag. El archivo tendrá los nombres de las muestras, el grupo, lecturas cortas, lecturas largas y plataformas de secuenciación. El encabezado de la tabla, con ejemplos de lecturas largas y cortas, luce de la siguiente forma: 
 
 | sample | group | short_reads_1 | short_reads_2 | long_reads | short_reads_platform | long_reads_platform |
 |-----------|-------|---------------|---------------|------------|----------------------|----------------------|
