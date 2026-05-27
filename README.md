@@ -48,7 +48,7 @@ outdir: './resultados_nf-coremag/'
 y se utilizaría el siguiente código escrito en Bash:
 
 ```console
-nextflow run nf-core/mag -profile docker -params-file params.yaml
+run nf-core/mag -profile docker -params-file params.yaml
 ```
 
 Al iniciar la ejecución del flujo de trabajo, las siguientes carpetas se crearán en el directorio de trabajo:
