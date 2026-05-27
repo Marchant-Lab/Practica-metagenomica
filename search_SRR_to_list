@@ -1,5 +1,4 @@
-#línea de código para buscar y descargar información de la base de datos SRA. Extrae una
-lista de identificadores SRR del proyecto PRJNA681475 
+#línea de código para buscar y descargar información de la base de datos SRA. Extrae una lista de identificadores SRR del proyecto PRJNA681475 
 
 #Primero se debe cargar conda entrez-direct 
 
