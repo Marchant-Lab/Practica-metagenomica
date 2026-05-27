@@ -18,4 +18,12 @@ Ya teniendo la lista de SRR creada, se podrán descargar cada una de ellas. Esto
 
 Al terminar la ejecución del script, tendremos una carpeta llamada **lecturas_PRJNA681475** en donde estarán descargados los archivos SRR. 
 
+##Tercer paso - creación del archivo de entrada 
+Luego de descargar los archivos SRR y tenerlos almacenados en una misma carpeta, crearemos el archivo de entrada que será utilizado por el flujo de trabajo de nf-core/mag. El archivo tendrá los nombres de las muestras, el grupo, lecturas cortas, lecturas largas y plataformas de secuenciación. El encabezado de la tabla, con ejemplos de lecturas largas y cortas, luce de la siguiente forma: 
 
+| sample | group | short_reads_1 | short_reads_2 | long_reads | short_reads_platform | long_reads_platform |
+|-----------|-------|---------------|---------------|------------|----------------------|----------------------|
+| MA-1_illumina | 1 | ./lecturas_PRJNA681475/SRR13165308_1.fastq.gz   | ./lecturas_PRJNA681475/SRR13165308_2.fastq.gz   |  | ILLUMINA             |             |
+| MA-1_nanopore_run1 | 2 |    |    | ./lecturas_PRJNA681475/SRR18260858.fastq.gz |               |OXFORD_NANOPORE               |
+
+El archivo será nombrado 
